@@ -2,8 +2,9 @@ import React from 'react';
 import zeller from '../utils/zeller';
 import { connect } from 'react-redux';
 import {setYearMonth} from '../actions';
+import CalCell from './CalCell';
 
-const Calendar = ({year, month, onCalChange}) => {
+const Calendar = ({year, month, todos, onCalChange}) => {
   console.log('Calendar', year, month);
   let h =zeller(parseInt(year), parseInt(month), 1);
   let cells = [];
@@ -31,8 +32,8 @@ const Calendar = ({year, month, onCalChange}) => {
         </div>
         <div class="cal-row">
           {
-            cells.map((cell) => (
-              <div className='cal-cell'>{cell}</div>
+            cells.map((day) => (
+              <CalCell day={day} todos={todos.filter((todo) => todo.date === year+'-'+month+'-'+day)}/>
             ))
           }
         </div>
@@ -42,7 +43,11 @@ const Calendar = ({year, month, onCalChange}) => {
 };
 
 const setStateToProps = (state) => {
-  return {year: state.calendar.year, month:state.calendar.month};
+  return {
+    year: state.calendar.year, 
+    month:state.calendar.month,
+    todos: state.todos
+  };
 };
 
 const setDispatchToProps = (dispatch) => {
