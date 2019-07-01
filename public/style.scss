@@ -19,27 +19,23 @@
 
 .cal {
   .cal-row {
-      display: flex;
-      justify-content: space-between;
-      .cal-cell {
-          border-right: 1px solid rgba(0, 0, 0, 0.125);
-          border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-          width: calc(100%/7);
-          height: 90px;
-          padding: 4px;
-      }
-      .cal-cell:first-child {
-          border-left: 1px solid rgba(0, 0, 0, 0.125);
-      }
-  }
-  .cal-row:first-child {
-      border-top: 1px solid rgba(0, 0, 0, 0.125);
+    display: flex;
+    flex-wrap: wrap;
+    border-left: 1px solid rgba(0, 0, 0, 0.125);
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+    .cal-cell {
+        border-right: 1px solid rgba(0, 0, 0, 0.125);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+        flex-basis: calc(100%/7);
+        height: 90px;
+        padding: 4px;
+    }
   }
   .day-of-the-week {
-      .cal-cell {
-          height: 1.6em;
-          text-align: center;
-      }
+    .cal-cell {
+        height: 1.6em;
+        text-align: center;
+    }
   }
 }
 

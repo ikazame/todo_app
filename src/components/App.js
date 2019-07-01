@@ -1,7 +1,7 @@
 import React from 'react';
 import {Container} from 'react-bootstrap';
 import TodoPanel from './TodoPanel';
-// import Calendar from './Calendar';
+import Calendar from './Calendar';
 import Header from './Header';
 
 const App = () => {
@@ -10,7 +10,7 @@ const App = () => {
       <Header />
       <Container>
         <TodoPanel />
-        {/* <Calendar /> */}
+        <Calendar />
       </Container>
     </div>
   );

@@ -25,3 +25,11 @@ export const setVisiblityFilter = (filter) => {
     filter
   };
 };
+
+export const setYearMonth = (year, month) => {
+  return {
+    type: actionTypes.SET_YEAR_MONTH,
+    year,
+    month
+  };
+};
