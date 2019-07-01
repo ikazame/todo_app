@@ -1,7 +1,7 @@
 import React from 'react';
 import {Container} from 'react-bootstrap';
 import TodoPanel from './TodoPanel';
-import Calendar from './Calendar';
+import Calendar from '../containers/Calendar';
 import Header from './Header';
 
 const App = () => {
