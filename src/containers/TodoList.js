@@ -29,8 +29,7 @@ TodoList.prototype = {
   }).isRequired).isRequired
 };
 
-const getVisibleTodos = (todos, filter) => {
-  console.log('filter', filter);
+const getVisibleTodos = (todos, filter, selectedDate) => {
   switch(filter){
   case C.FILTER.SHOW_ALL:
     return todos;
@@ -38,13 +37,15 @@ const getVisibleTodos = (todos, filter) => {
     return todos.filter((todo) => todo.completed);
   case C.FILTER.SHOW_ACTIVE:
     return todos.filter((todo) => !todo.completed);
+  case C.FILTER.SHOW_DATE:
+    return todos.filter((todo) => todo.date == selectedDate);
   default:
     console.log('Unknown Filter');
     return todos;
   }
 };
 const mapStateToProps = (state) => {
-  return {todos: getVisibleTodos(state.todos, state.visiblityFilter)};
+  return {todos: getVisibleTodos(state.todos, state.visiblityFilter, state.calendar.selectedDate)};
 };
 const mapDispathToProps = (dispatch) => {
   return {onToggleClick: (id) => dispatch(toggleTodo(id))};

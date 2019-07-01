@@ -29,6 +29,13 @@
         flex-basis: calc(100%/7);
         height: 90px;
         padding: 4px;
+        cursor: pointer;
+        &:hover {
+          background: rgba(0, 0, 0, 0.125);
+        }
+        &.active {
+          background: rgba(0, 0, 0, 0.125);
+        }
     }
   }
   .day-of-the-week {

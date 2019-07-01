@@ -33,3 +33,10 @@ export const setYearMonth = (year, month) => {
     month
   };
 };
+
+export const setSelectedDate = (selectedDate) => {
+  return {
+    type: actionTypes.SET_SELECTED_DATE,
+    selectedDate
+  };
+};

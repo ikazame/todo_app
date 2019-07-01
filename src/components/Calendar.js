@@ -1,10 +1,11 @@
 import React from 'react';
 import zeller from '../utils/zeller';
 import { connect } from 'react-redux';
-import {setYearMonth} from '../actions';
+import {setYearMonth, setSelectedDate, setVisiblityFilter} from '../actions';
 import CalCell from './CalCell';
+import * as C from '../utils/constant';
 
-const Calendar = ({year, month, todos, onCalChange}) => {
+const Calendar = ({year, month, todos, selectedDate, onCalChange, onCellClick}) => {
   console.log('Calendar', year, month);
   let h =zeller(parseInt(year), parseInt(month), 1);
   let cells = [];
@@ -33,7 +34,12 @@ const Calendar = ({year, month, todos, onCalChange}) => {
         <div class="cal-row">
           {
             cells.map((day) => (
-              <CalCell day={day} todos={todos.filter((todo) => todo.date === year+'-'+month+'-'+day)}/>
+              <CalCell 
+                day={day} 
+                todos={todos.filter((todo) => todo.date === year+'-'+month+'-'+day)}
+                active={year+'-'+month+'-'+day === selectedDate}
+                onClick={() => onCellClick(year, month, day)}
+              />
             ))
           }
         </div>
@@ -46,13 +52,19 @@ const setStateToProps = (state) => {
   return {
     year: state.calendar.year, 
     month:state.calendar.month,
-    todos: state.todos
+    todos: state.todos,
+    selectedDate: state.calendar.selectedDate
   };
 };
 
 const setDispatchToProps = (dispatch) => {
   return {
-    onCalChange: (year, month) => dispatch(setYearMonth(year, month))
+    onCalChange: (year, month) => dispatch(setYearMonth(year, month)),
+    // onCellClickを動かすところからやって
+    onCellClick: (year, month, day) => {
+      dispatch(setSelectedDate(year + '-' + month + '-' + day));
+      dispatch(setVisiblityFilter(C.FILTER.SHOW_DATE));
+    }
   };
 };
 

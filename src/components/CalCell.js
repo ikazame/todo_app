@@ -1,7 +1,8 @@
 import React from 'react';
+import classNames from 'classnames';
 
-const CalCell = ({day, todos}) => (
-  <div className='cal-cell'>
+const CalCell = ({day, todos, active, onClick}) => (
+  <div className={classNames('cal-cell', {active})} onClick={onClick}>
     <div>{day}</div>
     <div>{
       todos.map((todo) => (

@@ -6,5 +6,6 @@ const zeller = (year, month, day) => {
   let h = parseInt(((day + y + parseInt(y / 4)) - parseInt(y / 100) + parseInt(y / 400) + (31 * m) / 12) % 7);
   return h;
 };
+// zellerよりgetUTCDay()を使うべき
 
 export default zeller;
