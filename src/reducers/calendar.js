@@ -11,7 +11,7 @@ function formatDate(date){
 const now = new Date();
 let initialState = {
   year: now.getFullYear(),
-  month: now.getMonth()+1,
+  month: ('00' + (now.getMonth()+1)).slice(-2),
   selectedDate: formatDate(now)
 };
 
