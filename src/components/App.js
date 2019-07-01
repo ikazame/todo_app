@@ -1,13 +1,15 @@
 import React from 'react';
 import {Container} from 'react-bootstrap';
-import Todo from './Todo';
+import TodoPanel from './TodoPanel';
 // import Calendar from './Calendar';
+import Header from './Header';
 
 const App = () => {
   return (
     <div className="App">
+      <Header />
       <Container>
-        <Todo />
+        <TodoPanel />
         {/* <Calendar /> */}
       </Container>
     </div>
