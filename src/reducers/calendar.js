@@ -10,7 +10,7 @@ function formatDate(date){
 
 const now = new Date();
 let initialState = {
-  year: now.getFullYear(),
+  year: now.getFullYear().toString(),
   month: ('00' + (now.getMonth()+1)).slice(-2),
   selectedDate: formatDate(now)
 };
