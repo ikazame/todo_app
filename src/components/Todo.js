@@ -14,7 +14,7 @@ let Todo = ({text, date, completed, onButtonClick}) => {
         <Button 
           className={completed ? 'btn-primary' : 'btn-danger'}
           onClick={onButtonClick}>
-          {completed ? '済み' : '未済'}
+          {completed ? '完了' : '未完'}
         </Button>
       </div>
     </ListGroup.Item>

@@ -18,11 +18,6 @@ const AddTodo = ({onAddClick}) => {
           </Form.Group>
           <Form.Row className="align-items-center">
             <Col>
-              <Form.Check>
-                <Form.Check  type="checkbox" id="dateCheckBox" label="日時を指定" />
-              </Form.Check>
-            </Col>
-            <Col>
               <Form.Control type="date"
                 ref={(node) => { dateNode = node; }}
               />
@@ -34,6 +29,7 @@ const AddTodo = ({onAddClick}) => {
                   return;
                 }
                 onAddClick(textNode.value, dateNode.value);
+                textNode.value = '';
               }}>追加</Button>
             </Col>
           </Form.Row>
