@@ -29,8 +29,10 @@
   border-right: 1px solid rgba(0, 0, 0, 0.125);
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
   flex-basis: calc(100%/7);
+  max-width: calc(100%/7);
   height: 90px;
   padding: 4px;
+  overflow: hidden;
   cursor: pointer;
 }
 
@@ -45,4 +47,13 @@
 .cal .day-of-the-week .cal-cell {
   height: 1.6em;
   text-align: center;
+}
+
+.todo-list {
+  max-height: 60%;
+  overflow: scroll;
+}
+
+.todo-filter {
+  width: 100%;
 }

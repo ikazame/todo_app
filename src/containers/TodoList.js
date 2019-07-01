@@ -5,14 +5,11 @@ import Todo from '../components/Todo';
 import {connect} from 'react-redux';
 import {ListGroup} from 'react-bootstrap';
 import { toggleTodo } from '../actions';
-import Filter from '../components/Filter';
-
 
 let TodoList = ({todos, onToggleClick}) => {
   // console.log('todos:', todos);
   return (
     <ListGroup className="todo-list">
-      <Filter />
       {todos.map((todo) => 
         <Todo key={todo.id} {...todo} onButtonClick={() => onToggleClick(todo.id)} />  
       )}

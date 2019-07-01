@@ -16,9 +16,16 @@ let store = createStore(todo);
 store.dispatch(addTodo('hello,world', '2019-09-11'));
 store.dispatch(addTodo('hello,world', '2019-09-11'));
 store.dispatch(addTodo('hello,world', '2019-09-11'));
+store.dispatch(addTodo('hello,world', '2019-09-11'));
+store.dispatch(addTodo('hello,world', '2019-09-11'));
+store.dispatch(addTodo('hello,world', '2019-09-11'));
+store.dispatch(addTodo('hello,world', '2019-09-11'));
+store.dispatch(addTodo('hello,world', '2019-09-11'));
+store.dispatch(addTodo('hello,world', '2019-09-11'));
+store.dispatch(addTodo('hello,world', '2019-09-11'));
 store.dispatch(toggleTodo(1));
 store.dispatch(setVisiblityFilter(C.FILTER.SHOW_ALL));
-store.dispatch(setYearMonth(2019, 10));
+store.dispatch(setYearMonth('2019', '09'));
 store.dispatch(setSelectedDate('2019-01-01'));
 console.log(store.getState());
 
