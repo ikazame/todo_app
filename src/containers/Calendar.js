@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import zeller from '../utils/zeller';
 import { connect } from 'react-redux';
 import {setYearMonth, setSelectedDate, setVisiblityFilter} from '../actions';
-import CalCell from './CalCell';
+import CalCell from '../components/CalCell';
 import * as C from '../utils/constant';
 
 const Calendar = ({year, month, todos, selectedDate, onCalChange, onCellClick}) => {
@@ -46,6 +47,19 @@ const Calendar = ({year, month, todos, selectedDate, onCalChange, onCellClick}) 
       </div>
     </div>
   );
+};
+
+Calendar.propTypes = {
+  year: PropTypes.string.isRequired, 
+  month: PropTypes.string.isRequired, 
+  todos: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    text: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired
+  }).isRequired).isRequired, 
+  selectedDate: PropTypes.string.isRequired,
+  onCalChange: PropTypes.func.isRequired,
+  onCellClick: PropTypes.func.isRequired
 };
 
 const setStateToProps = (state) => {

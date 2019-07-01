@@ -18,12 +18,12 @@ let TodoList = ({todos, onToggleClick}) => {
 };
 
 TodoList.prototype = {
-  onToggleClick: PropTypes.func.isRequired,
   todos: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     text: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired
-  }).isRequired).isRequired
+  }).isRequired).isRequired,
+  onToggleClick: PropTypes.func.isRequired
 };
 
 const getVisibleTodos = (todos, filter, selectedDate) => {
