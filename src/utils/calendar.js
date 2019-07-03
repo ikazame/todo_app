@@ -1,5 +1,5 @@
 // 0: 日曜日, 1:月曜日, ..., 6:土曜日
-const zeller = (year, month, day) => {
+export const zeller = (year, month, day) => {
   let a = parseInt((14 - month) / 12);
   let y = (year - a);
   let m = (month + (12 * a) - 2);
@@ -8,4 +8,6 @@ const zeller = (year, month, day) => {
 };
 // zellerよりgetUTCDay()を使うべき
 
-export default zeller;
+export const getMonthDays = (year, month) => {  
+  return new Date(year, month, 0).getDate();
+};

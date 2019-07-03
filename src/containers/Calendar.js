@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import zeller from '../utils/zeller';
+import {zeller, getMonthDays} from '../utils/calendar';
 import { connect } from 'react-redux';
 import {setYearMonth, setSelectedDate, setVisiblityFilter} from '../actions';
 import CalCell from '../components/CalCell';
@@ -9,9 +9,11 @@ import * as C from '../utils/constant';
 const Calendar = ({year, month, todos, selectedDate, onCalChange, onCellClick}) => {
   console.log('Calendar', year, month);
   let h =zeller(parseInt(year), parseInt(month), 1);
+  let monthDays = getMonthDays(year, month);
   let cells = [];
   for(let i=0;i<h;i++) cells.push('');
-  for(let i=h;i<35;i++) cells.push(i-h+1);
+  for(let i=h;i<monthDays;i++) cells.push(i-h+1);
+  for(let i=monthDays;i<35;i++) cells.push('');
   return (
     <div id="calendar">
       <h2 class="text-center">

@@ -7,7 +7,7 @@ import todo from './reducers';
 import {addTodo, toggleTodo, setVisiblityFilter, setYearMonth, setSelectedDate} from './actions';
 import * as C from './utils/constant';
 import * as actionTypes from './utils/actionTypes';
-import zeller from './utils/zeller';
+import {zeller} from './utils/calendar';
 console.log(C);
 console.log(actionTypes.ADD_TODO);
 console.log(zeller(2019, 7, 1));
