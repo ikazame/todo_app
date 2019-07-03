@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import {ListGroup, Button} from 'react-bootstrap';
 
 let Todo = ({text, date, completed, onButtonClick}) => {
-  console.log(text, date, completed);
+  // 手で追加したtodoがカレンダーに出てないのでなんとかして
+  // console.log(text, date, completed);
   return (
     <ListGroup.Item>
       <div className="d-flex justify-content-between w-100">

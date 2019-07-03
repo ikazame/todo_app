@@ -34,14 +34,14 @@ const Calendar = ({year, month, todos, selectedDate, onCalChange, onCellClick}) 
         </div>
         <div class="cal-row">
           {
-            cells.map((day) => (
-              <CalCell 
+            cells.map((day) => {
+              return (<CalCell 
                 day={day} 
-                todos={todos.filter((todo) => todo.date === year+'-'+month+'-'+day)}
+                todos={todos.filter((todo) => todo.date === year+'-'+month+'-'+('0'+day).slice(-2))}
                 active={year+'-'+month+'-'+day === selectedDate}
                 onClick={() => onCellClick(year, month, day)}
-              />
-            ))
+              />);
+            })
           }
         </div>
       </div>
