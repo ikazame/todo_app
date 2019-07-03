@@ -11,3 +11,10 @@ export const zeller = (year, month, day) => {
 export const getMonthDays = (year, month) => {  
   return new Date(year, month, 0).getDate();
 };
+
+export const formatDate = (date) => {
+  var y = date.getFullYear();
+  var m = ('00' + (date.getMonth()+1)).slice(-2);
+  var d = ('00' + date.getDate()).slice(-2);
+  return y + '-' + m + '-' + d;
+};

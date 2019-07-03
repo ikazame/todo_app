@@ -1,12 +1,6 @@
 import * as actionTypes from '../utils/actionTypes';
 // import * as C from '../utils/constant';
-
-function formatDate(date){
-  var y = date.getFullYear();
-  var m = ('00' + (date.getMonth()+1)).slice(-2);
-  var d = ('00' + date.getDate()).slice(-2);
-  return y + '-' + m + '-' + d;
-}
+import {formatDate} from '../utils/calendar';
 
 const now = new Date();
 let initialState = {
