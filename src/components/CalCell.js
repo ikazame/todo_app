@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const CalCell = ({day, todos, active, onClick}) => (
-  <div className={classNames('cal-cell', {active})} onClick={onClick}>
+  <div className={classNames('cal-cell', {active})} onClick={day === '' ? void(0) : onClick}>
     <div>{day}</div>
     <div>{
       todos.map((todo) => (
