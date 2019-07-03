@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {addTodo} from '../actions';
 import {Button, Card, Form, Col} from 'react-bootstrap';
+import {formatDate} from '../utils/calendar';
 
 const AddTodo = ({onAddClick}) => {
   let textNode, dateNode;
+  let today = formatDate(new Date());
 
   return (
     <Card className="todo-card">
@@ -20,6 +22,7 @@ const AddTodo = ({onAddClick}) => {
             <Col>
               <Form.Control type="date"
                 ref={(node) => { dateNode = node; }}
+                value={today}
               />
             </Col>
             <Col>
