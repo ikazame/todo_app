@@ -27,6 +27,7 @@ TodoList.prototype = {
 };
 
 const getVisibleTodos = (todos, filter, selectedDate) => {
+  console.log(todos[0].date, selectedDate);
   switch(filter){
   case C.FILTER.SHOW_ALL:
     return todos;

@@ -41,7 +41,7 @@ const Calendar = ({year, month, todos, selectedDate, onCalChange, onCellClick}) 
                 day={day} 
                 todos={todos.filter((todo) => todo.date === year+'-'+month+'-'+('0'+day).slice(-2))}
                 active={year+'-'+month+'-'+day === selectedDate}
-                onClick={() => onCellClick(year, month, day)}
+                onClick={() => onCellClick(year, month, ('0'+day).slice(-2))}
               />);
             })
           }

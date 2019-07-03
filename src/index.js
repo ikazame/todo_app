@@ -14,6 +14,8 @@ console.log(zeller(2019, 7, 1));
 
 let store = createStore(todo);
 store.dispatch(addTodo('hello,world', '2019-07-01'));
+store.dispatch(addTodo('hello,world', '2019-07-01'));
+store.dispatch(addTodo('hello,world', '2019-07-11'));
 store.dispatch(addTodo('hello,world', '2019-07-11'));
 // store.dispatch(addTodo('hello,world', '2019-09-11'));
 // store.dispatch(addTodo('hello,world', '2019-09-11'));
@@ -24,6 +26,7 @@ store.dispatch(addTodo('hello,world', '2019-07-11'));
 // store.dispatch(addTodo('hello,world', '2019-09-11'));
 // store.dispatch(addTodo('hello,world', '2019-09-11'));
 store.dispatch(toggleTodo(1));
+store.dispatch(toggleTodo(4));
 // store.dispatch(setVisiblityFilter(C.FILTER.SHOW_ALL));
 // store.dispatch(setYearMonth('2019', '09'));
 // store.dispatch(setSelectedDate('2019-01-01'));
