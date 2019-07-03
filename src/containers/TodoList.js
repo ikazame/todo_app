@@ -33,7 +33,7 @@ const getVisibleTodos = (todos, filter, selectedDate) => {
   case C.FILTER.SHOW_ACTIVE:
     return todos.filter((todo) => !todo.completed);
   case C.FILTER.SHOW_DATE:
-    return todos.filter((todo) => todo.date == selectedDate);
+    return todos.filter((todo) => todo.date === selectedDate);
   default:
     // console.log('Unknown Filter');
     return todos;
