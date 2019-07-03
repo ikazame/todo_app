@@ -22,7 +22,7 @@ const AddTodo = ({onAddClick}) => {
             <Col>
               <Form.Control type="date"
                 ref={(node) => { dateNode = node; }}
-                value={today}
+                defaultValue={today}
               />
             </Col>
             <Col>
