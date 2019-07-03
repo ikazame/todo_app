@@ -4,14 +4,12 @@ import {connect} from 'react-redux';
 import {setVisiblityFilter} from '../actions';
 import {Button} from 'react-bootstrap';
 
-const Link = ({active, children, onClick}) => {
-  return (
-    <Button className='btn-secondary' active={active} onClick={ (e) => {
-      e.preventDefault();
-      onClick();
-    }}>{children}</Button>
-  );
-};
+const Link = ({active, children, onClick}) => (
+  <Button className='btn-secondary' active={active} onClick={ (e) => {
+    e.preventDefault();
+    onClick();
+  }}>{children}</Button>
+);
 
 Link.propTypes = {
   active: PropTypes.bool.isRequired,

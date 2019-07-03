@@ -4,14 +4,12 @@ import AddTodo from '../containers/AddTodo';
 import Filter from '../components/Filter';
 
 
-const TodoPanel = () => {
-  return (
-    <div id="todo">
-      <Filter />
-      <TodoList />
-      <AddTodo />
-    </div>
-  );
-};
+const TodoPanel = () => (
+  <div id="todo">
+    <Filter />
+    <TodoList />
+    <AddTodo />
+  </div>
+);
 
 export default TodoPanel;

@@ -28,7 +28,6 @@ const AddTodo = ({onAddClick}) => {
             <Col>
               <Button onClick={() => {
                 if(!textNode.value || !dateNode.value) {
-                  console.log('returnします');
                   return;
                 }
                 onAddClick(textNode.value, dateNode.value);

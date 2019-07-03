@@ -6,16 +6,14 @@ import {connect} from 'react-redux';
 import {ListGroup} from 'react-bootstrap';
 import { toggleTodo } from '../actions';
 
-let TodoList = ({todos, onToggleClick}) => {
-  // console.log('todos:', todos);
-  return (
-    <ListGroup className="todo-list">
-      {todos.map((todo) => 
-        <Todo key={todo.id} {...todo} onButtonClick={() => onToggleClick(todo.id)} />  
-      )}
-    </ListGroup>
-  );
-};
+let TodoList = ({todos, onToggleClick}) => (
+  <ListGroup className="todo-list">
+    {todos.map((todo) => 
+      <Todo key={todo.id} {...todo} onButtonClick={() => onToggleClick(todo.id)} />  
+    )}
+  </ListGroup>
+);
+
 
 TodoList.prototype = {
   todos: PropTypes.arrayOf(PropTypes.shape({
@@ -27,7 +25,6 @@ TodoList.prototype = {
 };
 
 const getVisibleTodos = (todos, filter, selectedDate) => {
-  console.log(todos[0].date, selectedDate);
   switch(filter){
   case C.FILTER.SHOW_ALL:
     return todos;
@@ -38,7 +35,7 @@ const getVisibleTodos = (todos, filter, selectedDate) => {
   case C.FILTER.SHOW_DATE:
     return todos.filter((todo) => todo.date == selectedDate);
   default:
-    console.log('Unknown Filter');
+    // console.log('Unknown Filter');
     return todos;
   }
 };
